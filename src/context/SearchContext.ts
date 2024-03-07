@@ -6,6 +6,8 @@ interface ContextProps {
     setUsers: Dispatch<SetStateAction<User[]>>;
     query: string;
     setQuery: Dispatch<SetStateAction<string>>;
+    isLoading: boolean;
+    setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 export const SearchContext = createContext<ContextProps>({ 
@@ -13,6 +15,8 @@ export const SearchContext = createContext<ContextProps>({
     setUsers: () => {},
     query: '',
     setQuery: () => {},
+    isLoading: false,
+    setIsLoading: () => {}
 });
 
 export const useSearchContext = () => useContext(SearchContext)
