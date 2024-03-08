@@ -7,7 +7,9 @@ interface SkeletonProps {
     border?: string;
 }
 
-export const Skeleton = ({ border, height, width }: SkeletonProps) => {
+export const Skeleton = (props: SkeletonProps) => {
+    const { border, height, width } = props
+    
     const styles: CSSProperties = {
         width,
         height,

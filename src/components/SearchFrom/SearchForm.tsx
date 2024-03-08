@@ -1,9 +1,14 @@
-import { useSearchContext } from "../../context/SearchContext";
+import { Dispatch, SetStateAction, memo } from "react";
 import "./styles.css";
 
-export function SearchForm() {
-  const {query, setQuery} = useSearchContext()
+interface SearchFormProps {
+  query: string;
+  setQuery: Dispatch<SetStateAction<string>>;
+}
 
+export const SearchForm = memo((props: SearchFormProps) => {
+  const {query, setQuery} = props;
+  
   return (
     <div className="searchForm">
       <form onSubmit={(e) => e.preventDefault()}>
@@ -16,4 +21,4 @@ export function SearchForm() {
       </form>
     </div>
   );
-}
+})
